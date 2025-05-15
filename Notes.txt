@@ -1,0 +1,9 @@
+CQRLOG MySql server is running on port 64000 not the default 3306!
+
+User/Password is cqrlog/cqrlog
+
+edited query to change
+    DATE_FORMAT(qsodate, '%Y-%m') as month
+to
+    DATE_FORMAT(qsodate, '%Y-%m-01') as month
+to get the first day of the month

@@ -1,0 +1,59 @@
+
+Field Type Null Key Default Extra 
+
+
+id_cqrlog_main int(11) NO PRI auto_increment 
+qsodate date NO MUL  
+time_on varchar(5) NO   
+time_off varchar(5) YES    
+callsign varchar(20) NO MUL  
+freq decimal(10,4) NO   
+mode varchar(12) NO   
+rst_s varchar(20) YES   
+rst_r varchar(20) YES    
+name varchar(40) YES MUL   
+qth varchar(60) YES MUL  
+qsl_s varchar(4) YES    
+qsl_r varchar(3) YES    
+qsl_via varchar(30) YES    
+iota varchar(6) YES    
+pwr varchar(10) YES    
+itu int(11) YES  0  
+waz int(11) YES  0  
+loc varchar(10) YES    
+my_loc varchar(10) YES    
+county varchar(30) YES    
+award varchar(50) YES    
+remarks varchar(200) YES    
+adif int(11) YES MUL 0  
+band varchar(6) YES MUL   
+qso_dxcc int(11) YES  0  
+profile int(11) YES  0  
+idcall varchar(20) YES MUL   
+state varchar(4) YES    
+lotw_qslsdate date YES   
+lotw_qslrdate date YES   
+lotw_qsls varchar(3) NO    
+lotw_qslr varchar(3) NO    
+cont varchar(3) YES    
+qsls_date varchar(10) YES   
+qslr_date varchar(10) YES   
+club_nr1 varchar(100) YES MUL  
+club_nr2 varchar(100) YES MUL   
+club_nr3 varchar(100) YES MUL   
+club_nr4 varchar(100) YES MUL   
+club_nr5 varchar(100) YES MUL   
+eqsl_qsl_sent varchar(1) NO    
+eqsl_qslsdate date YES   
+eqsl_qsl_rcvd varchar(1) NO    
+eqsl_qslrdate date YES   
+rxfreq decimal(10,4) YES   
+satellite varchar(30) YES    
+prop_mode varchar(30) YES    
+contestname varchar(40) YES   
+stx varchar(6) YES   
+srx varchar(6) YES   
+stx_string varchar(50) YES   
+srx_string varchar(50) YES   
+dok varchar(12) YES   
+operator varchar(20) YES   

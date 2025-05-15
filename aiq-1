@@ -2,6 +2,9 @@ I have a mysql with the following table structure:
 
 qsodate date NO MUL
 mode varchar(12) NO
+callsign varchar(20) NO MUL
+mode varchar(12) NO
+
 
 write a query to get the number of qsos for each mode on each date.
 
@@ -12,3 +15,13 @@ can you add cumulative counts as well
 the table name is cqrlog_main
 
 can you output the results in csv
+
+
+DB view view_cqrlog_main_by_qsodate has the following strcolumns:
+
+qsodate
+callsign varchar(20)
+mode varchar(12)
+country varchar(30)
+
+Write a query to extract the total number of qsos for each country and the number of unique callsigns for each country.
