@@ -3,4 +3,6 @@
 
 SELECT COUNT(DISTINCT SUBSTRING(loc, 1, 4)) AS unique_4char_gridsquares
 FROM view_cqrlog_main_by_qsodate
-WHERE loc IS NOT NULL AND loc != '';
+WHERE
+    loc IS NOT NULL
+    AND loc != '';
