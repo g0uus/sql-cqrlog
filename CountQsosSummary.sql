@@ -4,6 +4,12 @@
 SELECT
     SUM(
         CASE
+            WHEN qsodate = CURRENT_DATE-1 THEN 1
+            ELSE 0
+        END
+    ) AS qsos_yesterday,
+    SUM(
+        CASE
             WHEN qsodate = CURRENT_DATE THEN 1
             ELSE 0
         END
@@ -25,4 +31,3 @@ FROM view_cqrlog_main_by_qsodate;
 
 -- Notes:
 -- - Uses `view_cqrlog_main_by_qsodate` like the other files in this repo.
--- - `WEEK(..., 1)` uses Monday as the first day of the week; change the mode if you need a different week definition.
