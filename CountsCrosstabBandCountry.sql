@@ -74,7 +74,8 @@ SELECT
             WHEN band = '6M' THEN 1
             ELSE 0
         END
-    ) AS `6m`
+    ) AS `6m`,
+    SUM(1) AS total
 FROM view_cqrlog_main_by_qsodate
 WHERE
     country IS NOT NULL
