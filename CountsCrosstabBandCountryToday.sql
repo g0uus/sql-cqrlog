@@ -190,6 +190,7 @@ FROM view_cqrlog_main_by_qsodate
 WHERE
     country IS NOT NULL
     AND country <> ''
+    AND qsodate = CURRENT_DATE
 GROUP BY
     country
 ORDER BY country;
