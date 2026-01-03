@@ -4,16 +4,16 @@
 SELECT
     SUM(
         CASE
-            WHEN qsodate = CURRENT_DATE -1 THEN 1
-            ELSE 0
-        END
-    ) AS yesterday,
-    SUM(
-        CASE
             WHEN qsodate = CURRENT_DATE THEN 1
             ELSE 0
         END
     ) AS today,
+    SUM(
+        CASE
+            WHEN qsodate = CURRENT_DATE -1 THEN 1
+            ELSE 0
+        END
+    ) AS yesterday,
     SUM(
         CASE
             WHEN YEARWEEK(qsodate) >= YEARWEEK(CURRENT_DATE) THEN 1
@@ -22,7 +22,13 @@ SELECT
     ) AS this_week,
     SUM(
         CASE
-            WHEN YEAR(qsodate) * 100 + WEEK(qsodate) >= YEAR(CURRENT_DATE) * 100 + (WEEK(CURRENT_DATE) -1) THEN 1
+            WHEN YEAR(qsodate) * 100 + WEEK(qsodate) >= YEAR(
+                CURRENT_DATE - INTERVAL 1 week
+            ) * 100 + (
+                WEEK(
+                    CURRENT_DATE - interval 1 week
+                )
+            ) THEN 1
             ELSE 0
         END
     ) AS last_week,
@@ -46,16 +52,16 @@ SELECT
     ) AS last_month,
     sum(
         CASE
-            WHEN YEAR(qsodate) = YEAR(CURRENT_DATE) -1 THEN 1
-            ELSE 0
-        END
-    ) AS last_year,
-    sum(
-        CASE
             WHEN YEAR(qsodate) = YEAR(CURRENT_DATE) THEN 1
             ELSE 0
         END
     ) AS this_year,
+    sum(
+        CASE
+            WHEN YEAR(qsodate) = YEAR(CURRENT_DATE) -1 THEN 1
+            ELSE 0
+        END
+    ) AS last_year,
     COUNT(*) AS total_qsos
 FROM view_cqrlog_main_by_qsodate;
 
