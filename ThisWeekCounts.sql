@@ -7,7 +7,7 @@ select
         when qsodate = CURRENT_DATE then 'Today'
         when qsodate = CURRENT_DATE - INTERVAL 1 DAY then 'Yesterday'
         else to_char (qsodate, 'Day')
-    end as day_label,
+    end as day,
     sum(
         case
             when mode = 'SSB' then 1
