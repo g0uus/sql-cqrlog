@@ -43,7 +43,8 @@ select
             when mode <> "SSB"
             and mode <> "CW"
             and mode <> "FT4"
-            and mode <> "FT8" then 1
+            and mode <> "FT8"
+            and mode <> "RTTY" then 1
             else 0
         end
     ) as other,
