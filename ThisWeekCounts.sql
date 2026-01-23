@@ -34,6 +34,12 @@ select
     ) as ft8,
     sum(
         case
+            when mode = 'RTTY' then 1
+            else 0
+        end
+    ) as rtty,
+    sum(
+        case
             when mode <> "SSB"
             and mode <> "CW"
             and mode <> "FT4"
