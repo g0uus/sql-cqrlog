@@ -20,7 +20,7 @@ select
             else 0
         end
     ) as cw,
-        sum(
+    sum(
         case
             when mode = 'FM' then 1
             else 0
@@ -40,6 +40,12 @@ select
     ) as ft8,
     sum(
         case
+            when mode = 'PSK' then 1
+            else 0
+        end
+    ) as psk,
+    sum(
+        case
             when mode = 'RTTY' then 1
             else 0
         end
@@ -51,6 +57,7 @@ select
             and mode <> "FM"
             and mode <> "FT4"
             and mode <> "FT8"
+            and mode <> "PSK"
             and mode <> "RTTY" then 1
             else 0
         end
