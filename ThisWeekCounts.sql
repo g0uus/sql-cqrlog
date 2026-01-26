@@ -20,6 +20,12 @@ select
             else 0
         end
     ) as cw,
+        sum(
+        case
+            when mode = 'FM' then 1
+            else 0
+        end
+    ) as fm,
     sum(
         case
             when mode = 'FT4' then 1
@@ -42,6 +48,7 @@ select
         case
             when mode <> "SSB"
             and mode <> "CW"
+            and mode <> "FM"
             and mode <> "FT4"
             and mode <> "FT8"
             and mode <> "RTTY" then 1
